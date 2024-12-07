@@ -7,12 +7,12 @@ mod d03;
 mod d04;
 mod d05;
 mod d06;
-// mod d07;
+mod d07;
 // mod d08;
 // mod d09;
 mod utils;
 
 fn main() {
-    let result = d06::main::solution2(utils::file_line_iter("./text/d06")).unwrap();
+    let result = d07::main::solution2(utils::file_line_iter("./text/d07")).unwrap();
     println!("{}", result);
 }
