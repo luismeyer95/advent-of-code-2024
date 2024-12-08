@@ -3,7 +3,7 @@ use std::collections::{BinaryHeap, HashMap};
 use std::error::Error;
 use std::iter::zip;
 
-aoc_test!(day: d01, version: alt, part1: 2769675, part2: 24643097);
+aoc_test!(day: d1, version: alt, part1: 2769675, part2: 24643097);
 
 pub fn solution1(line_iter: impl Iterator<Item = String>) -> Result<u32, Box<dyn Error>> {
     line_iter

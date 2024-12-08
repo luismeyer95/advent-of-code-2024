@@ -2,7 +2,7 @@ use crate::aoc_test;
 use itertools::{chain, Itertools};
 use std::error::Error;
 
-aoc_test!(day: d02, version: main, part1: 359, part2: 418);
+aoc_test!(day: d2, version: main, part1: 359, part2: 418);
 
 pub fn is_valid_level(nums: &[isize]) -> bool {
     let sign = nums[1] - nums[0];

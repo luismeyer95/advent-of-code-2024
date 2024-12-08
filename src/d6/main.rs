@@ -6,7 +6,7 @@ use std::{
 
 use crate::aoc_test;
 
-aoc_test!(day: d06, version: main, part1: 5444, part2: 1946);
+aoc_test!(day: d6, version: main, part1: 5444, part2: 1946);
 
 pub fn turn_right(dir: (i32, i32)) -> (i32, i32) {
     match dir {
@@ -126,12 +126,12 @@ pub fn solution2(line_iter: impl Iterator<Item = String>) -> Result<usize, Box<d
 //     let w = grid[0].len() as i32;
 //
 //     let mut start = (0, 0);
-//     let mut dir = (0, 0);
+//     let mut start_dir = (0, 0);
 //     for y in 0..h {
 //         for x in 0..w {
 //             if let Some(guard_dir) = resolve_dir(grid[y as usize][x as usize]) {
 //                 start = (y, x);
-//                 dir = guard_dir;
+//                 start_dir = guard_dir;
 //                 break;
 //             }
 //         }
@@ -141,25 +141,26 @@ pub fn solution2(line_iter: impl Iterator<Item = String>) -> Result<usize, Box<d
 //     let mut looping_pos = HashSet::new();
 //
 //     // Run along the initial guard path
-//     while y + dir.0 < h && y + dir.0 >= 0 && x + dir.1 < w && x + dir.1 >= 0 {
-//         let (y_next, x_next) = ((y + dir.0) as usize, (x + dir.1) as usize);
+//     while y + start_dir.0 < h && y + start_dir.0 >= 0 && x + start_dir.1 < w && x + start_dir.1 >= 0
+//     {
+//         let (y_next, x_next) = ((y + start_dir.0) as usize, (x + start_dir.1) as usize);
 //
 //         if grid[y_next][x_next] == b'#' {
-//             dir = turn_right(dir);
+//             start_dir = turn_right(start_dir);
 //             continue;
 //         }
 //
 //         // No obstacle in front, but what if there is?
 //         // Run guard sim for this case, increment if it loops
 //         grid[y_next][x_next] = b'#';
-//         if guard_sim_is_looping(&grid, (y, x), dir) {
+//         if guard_sim_is_looping(&grid, (y, x), start_dir) {
 //             looping_pos.insert((y_next, x_next));
 //         }
 //         // Reset
 //         grid[y_next][x_next] = b'.';
 //
-//         y += dir.0;
-//         x += dir.1;
+//         y += start_dir.0;
+//         x += start_dir.1;
 //     }
 //
 //     Ok(looping_pos.len())

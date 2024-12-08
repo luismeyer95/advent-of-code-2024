@@ -4,7 +4,7 @@ use std::error::Error;
 
 use crate::aoc_test;
 
-aoc_test!(day: d03, version: main, part1: 190604937, part2: 82857512);
+aoc_test!(day: d3, version: main, part1: 190604937, part2: 82857512);
 
 pub fn solution1(line_iter: impl Iterator<Item = String>) -> Result<u32, Box<dyn Error>> {
     let re = Regex::new(r"mul\((\d+),(\d+)\)").unwrap();

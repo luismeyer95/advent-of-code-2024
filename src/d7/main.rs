@@ -3,7 +3,7 @@ use itertools::Itertools;
 use crate::aoc_test;
 use std::error::Error;
 
-aoc_test!(day: d07, version: main, part1: 3245122495150, part2: 105517128211543);
+aoc_test!(day: d7, version: main, part1: 3245122495150, part2: 105517128211543);
 
 pub fn solution1(line_iter: impl Iterator<Item = String>) -> Result<u64, Box<dyn Error>> {
     let lines = line_iter.collect::<Vec<String>>();

@@ -2,7 +2,7 @@ use crate::aoc_test;
 use std::collections::{BinaryHeap, HashMap};
 use std::error::Error;
 
-aoc_test!(day: d01, version: main, part1: 2769675, part2: 24643097);
+aoc_test!(day: d1, version: main, part1: 2769675, part2: 24643097);
 
 pub fn solution1(line_iter: impl Iterator<Item = String>) -> Result<u32, Box<dyn Error>> {
     let lines = line_iter.collect::<Vec<String>>();

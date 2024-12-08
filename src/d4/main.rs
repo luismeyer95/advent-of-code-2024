@@ -4,7 +4,7 @@ use std::error::Error;
 
 use crate::aoc_test;
 
-aoc_test!(day: d04, version: main, part1: 2483, part2: 1925);
+aoc_test!(day: d4, version: main, part1: 2483, part2: 1925);
 
 pub fn count_matches(text: &str, pattern: &str) -> u32 {
     let re = Regex::new(pattern).unwrap();

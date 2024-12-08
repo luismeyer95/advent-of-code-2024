@@ -6,7 +6,7 @@ use std::{
 
 use crate::aoc_test;
 
-aoc_test!(day: d05, version: main, part1: 5964, part2: 4719);
+aoc_test!(day: d5, version: main, part1: 5964, part2: 4719);
 
 pub fn solution1(mut line_iter: impl Iterator<Item = String>) -> Result<u32, Box<dyn Error>> {
     let mut map: HashMap<u32, HashSet<u32>> = HashMap::new();
