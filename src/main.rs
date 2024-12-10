@@ -14,6 +14,6 @@ mod d9;
 mod utils;
 
 fn main() {
-    let result = d10::main::solution1(utils::file_line_iter("./text/d10")).unwrap();
+    let result = d10::main::solution2(utils::file_line_iter("./text/d10")).unwrap();
     println!("{}", result);
 }

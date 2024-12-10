@@ -1,12 +1,9 @@
-use itertools::{zip, Itertools};
-use nom::AsBytes;
-use std::{
-    collections::{HashMap, HashSet},
-    error::Error,
-    iter::repeat,
-};
+use itertools::Itertools;
+use std::{error::Error, iter::repeat};
 
 use crate::aoc_test;
+
+aoc_test!(day: d9, version: main, part1: 6461289671426, part2: 6488291456470);
 
 pub fn solution1(line_iter: impl Iterator<Item = String>) -> Result<usize, Box<dyn Error>> {
     let mut line: Vec<i32> = line_iter
@@ -62,6 +59,7 @@ pub fn solution2(line_iter: impl Iterator<Item = String>) -> Result<usize, Box<d
     for r in (0..ln.len()).rev().filter(|&r| r % 2 == 0) {
         let Block(moving_block_size, _) = ln[r];
         let (mut l, mut flat_index) = (0, 0);
+
         // Find a leftward free span that's big enough
         while l < r {
             let Block(size, occupied) = ln[l];
@@ -84,26 +82,4 @@ pub fn solution2(line_iter: impl Iterator<Item = String>) -> Result<usize, Box<d
     }
 
     Ok(checksum)
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use crate::utils;
-
-    #[test]
-    fn test_solution2() {
-        // 23331131402
-        // 23....    0 { 1: 2 }, chk += (2 + 0 + 0) * 5 + (2 + 1 + 0) * 5 = 25
-        // 233...  400 cannot move 4
-        // 2333  01400 { 3: 3 }, chk += (8 + 0 + 0) * 3 + (8 + 1 + 0) * 3 + (8 + 2 + 0) * 3 = 81
-        // 23330101400 { 1: 3(+1) }, chk += (2 + 0 + 2) * 2 = 8
-        // chk += (0*0+1*0)+(5*1+6*1+7*1)+0*(11*2) ... + (13*4+14*4+15*4+16*4) = 18 + 232 = 250
-        // chk = 364
-
-        // actual: chk
-
-        let s = vec!["23331131402".to_owned()];
-        assert_eq!(solution2(s.into_iter()).unwrap(), 428);
-    }
 }
