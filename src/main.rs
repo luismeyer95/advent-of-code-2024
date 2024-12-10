@@ -9,10 +9,10 @@ mod d5;
 mod d6;
 mod d7;
 mod d8;
-// mod d09;
+mod d9;
 mod utils;
 
 fn main() {
-    let result = d8::main::solution2(utils::file_line_iter("./text/d08")).unwrap();
+    let result = d9::main::solution2(utils::file_line_iter("./text/d9")).unwrap();
     println!("{}", result);
 }
