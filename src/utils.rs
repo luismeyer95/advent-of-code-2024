@@ -28,6 +28,10 @@ pub fn file_line_iter(filename: impl AsRef<Path>) -> impl Iterator<Item = String
     reader.lines().map(|l| l.expect("Failed to read line"))
 }
 
+pub fn string_line_iter(s: &str) -> impl Iterator<Item = String> + '_ {
+    s.lines().map(|s| s.to_string())
+}
+
 #[macro_export]
 macro_rules! aoc_test {
     (day: $day:tt, version: $version:tt, part1: $part1:expr, part2: $part2:expr) => {

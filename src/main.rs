@@ -4,6 +4,7 @@
 mod d1;
 mod d10;
 mod d11;
+mod d12;
 mod d2;
 mod d3;
 mod d4;
@@ -15,6 +16,6 @@ mod d9;
 mod utils;
 
 fn main() {
-    let result = d11::main::solution1(utils::file_line_iter("./text/d11")).unwrap();
+    let result = d12::main::solution2(utils::file_line_iter("./text/d12")).unwrap();
     println!("{}", result);
 }

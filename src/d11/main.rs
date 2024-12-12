@@ -31,7 +31,7 @@ pub fn count_stones(stone: u64, iteration: u64) -> u64 {
         return 1;
     }
 
-    let digit_count = stone.checked_ilog10().unwrap_or(0) + 1;
+    let digit_count = stone.ilog10() + 1;
 
     match stone {
         0 => count_stones(1, iteration - 1),
